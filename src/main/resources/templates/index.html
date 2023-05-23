@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Product Service Station</title>
+</head>
+<body>
+	<div align="center">
+		<h2>Welcome To ATDev School</h2>
+		<h4>Student Data</h4>
+		&nbsp;&nbsp;&nbsp;
+		<a href="new">Insert New Student Entry</a>
+		&nbsp;&nbsp;&nbsp;
+		<br>
+		<br>
+		<table border="1" cellpadding="5">
+			<thead>
+				<tr>
+					<th>Registered ID</th>
+					<th>Student Name</th>
+					<th>Class</th>
+					<th>Roll Number</th>
+					<th>Percentage</th>
+					<th>Action</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="data : ${listData}">
+					<td th:text="${data.id}">Registered ID</td>
+					<td th:text="${data.name}">Student Name</td>
+					<td th:text="${data.clas}">Class</td>
+					<td th:text="${data.rollno}">Roll Number</td>
+					<td th:text="${data.percent}">Percentage</td>
+                    <td>
+                    <a th:href="@{'/edit/' + ${data.id}}">Edit</a>
+                    &nbsp;&nbsp;&nbsp;
+                     <a th:href="@{'/delete/' + ${data.id}}">Delete</a>
+                    </td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</body>
+</html>

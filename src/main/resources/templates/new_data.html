@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>New Student Data</title>
+</head>
+<body>
+<div align="center">
+<h3>New Student Data</h3>
+&nbsp;
+<form action="#" th:action="@{/save}" th:object="${data}" method="post">
+<table border="1" cellpadding="5">
+<tr>
+<td>Student Name:</td>
+<td><input type="text" th:field="*{name}"/></td> 
+</tr>
+<tr>
+<td>Class:</td>
+<td><input type="text" th:field="*{clas}"/></td> 
+</tr>
+<tr>
+<td>Roll Number:</td>
+<td><input type="text" th:field="*{rollno}"/></td> 
+</tr>
+<tr>
+<td>Percentage:</td>
+<td><input type="text" th:field="*{percent}"/></td> 
+</tr>
+<tr>
+ 
+<td colspan="2" align="center"><button type="submit">Save </button></td> 
+</tr>
+</table>
+</form>
+</div>
+</body>
+</html>
